@@ -1,0 +1,114 @@
+# Git ignore file for Python, Docker, and Kubernetes projects
+
+# Python
+__pycache__/
+*.py[cod]
+*$py.class
+*.so
+.Python
+build/
+develop-eggs/
+dist/
+downloads/
+eggs/
+.eggs/
+lib/
+lib64/
+parts/
+sdist/
+var/
+wheels/
+pip-wheel-metadata/
+share/python-wheels/
+*.egg-info/
+.installed.cfg
+*.egg
+MANIFEST
+
+# Virtual environments
+venv/
+ENV/
+env/
+.venv
+
+# IDE
+.vscode/
+.idea/
+*.swp
+*.swo
+*~
+.DS_Store
+*.sublime-workspace
+*.sublime-project
+
+# Testing
+.pytest_cache/
+.coverage
+htmlcov/
+.tox/
+.hypothesis/
+pytest-reports/
+coverage.xml
+
+# Linting
+.pylint.d/
+.mypy_cache/
+.dmypy.json
+dmypy.json
+
+# Docker
+.dockerignore
+docker-compose.override.yml
+
+# Kubernetes
+kubeconfig
+.kube/
+kind-cluster/
+
+# Helm
+charts/*/charts/
+Chart.lock
+
+# Environment variables
+.env
+.env.local
+.env.*.local
+.secrets
+secrets/
+
+# Node.js (for web app)
+node_modules/
+npm-debug.log
+yarn-error.log
+dist/
+build/
+
+# Logs
+logs/
+*.log
+*.logs
+
+# OS
+.DS_Store
+Thumbs.db
+
+# Temporary files
+*.tmp
+*.temp
+temp/
+tmp/
+
+# Backup files
+*.backup
+*.bak
+*.orig
+
+# IDE temp files
+.vscode/settings.json
+.vscode/extensions.json
+
+# Build artifacts
+*.o
+*.a
+*.so
+*.dylib
