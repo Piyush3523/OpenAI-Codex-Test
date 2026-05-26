@@ -1,0 +1,14 @@
+apiVersion: v1
+kind: ConfigMap
+metadata:
+  name: {{ include "app-platform.fullname" . }}-config
+  labels:
+    {{- include "app-platform.labels" . | nindent 4 }}
+data:
+  APP_NAME: {{ .Values.api.env.appName | quote }}
+  APP_VERSION: {{ .Values.api.env.appVersion | quote }}
+  ENVIRONMENT: {{ .Values.api.env.environment | quote }}
+  CORS_ORIGINS: {{ .Values.api.env.corsOrigins | quote }}
+  REDIS_URL: {{ include "app-platform.redisUrl" . | quote }}
+  API_UPSTREAM: {{ printf "http://%s-api:%v" (include "app-platform.fullname" .) .Values.api.service.port | quote }}
+

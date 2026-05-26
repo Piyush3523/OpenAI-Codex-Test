@@ -57,7 +57,6 @@ coverage.xml
 dmypy.json
 
 # Docker
-.dockerignore
 docker-compose.override.yml
 
 # Kubernetes
@@ -68,6 +67,19 @@ kind-cluster/
 # Helm
 charts/*/charts/
 Chart.lock
+
+# Terraform
+.terraform/
+*.tfstate
+*.tfstate.*
+crash.log
+crash.*.log
+*.tfvars
+*.tfvars.json
+override.tf
+override.tf.json
+*_override.tf
+*_override.tf.json
 
 # Environment variables
 .env

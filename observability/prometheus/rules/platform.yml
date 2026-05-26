@@ -1,0 +1,21 @@
+groups:
+  - name: platform
+    rules:
+      - alert: PlatformApiUnavailable
+        expr: up{job="platform-api"} == 0
+        for: 1m
+        labels:
+          severity: critical
+        annotations:
+          summary: Platform API is unavailable
+          description: Prometheus cannot scrape the platform API target.
+
+      - alert: PlatformApiHighLatency
+        expr: histogram_quantile(0.95, sum(rate(http_request_duration_seconds_bucket[5m])) by (le)) > 1
+        for: 5m
+        labels:
+          severity: warning
+        annotations:
+          summary: Platform API latency is elevated
+          description: The 95th percentile API latency is above one second.
+

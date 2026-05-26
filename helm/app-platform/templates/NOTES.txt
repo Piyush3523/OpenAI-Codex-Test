@@ -1,0 +1,7 @@
+Application endpoints:
+  Web: kubectl port-forward svc/{{ include "app-platform.fullname" . }}-web 5000:{{ .Values.web.service.port }} -n {{ .Release.Namespace }}
+  API: kubectl port-forward svc/{{ include "app-platform.fullname" . }}-api 8000:{{ .Values.api.service.port }} -n {{ .Release.Namespace }}
+
+Health check:
+  curl http://localhost:8000/health
+

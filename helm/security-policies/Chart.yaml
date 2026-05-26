@@ -1,0 +1,7 @@
+apiVersion: v2
+name: security-policies
+description: Kyverno policies for the Secure Kubernetes Observability Platform
+type: application
+version: 0.1.0
+appVersion: "0.1.0"
+

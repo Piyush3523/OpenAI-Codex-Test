@@ -1,0 +1,3 @@
+targetNamespace: platform
+validationFailureAction: Enforce
+

@@ -1,0 +1,23 @@
+apiVersion: kyverno.io/v1
+kind: ClusterPolicy
+metadata:
+  name: platform-disallow-latest-tag
+spec:
+  validationFailureAction: {{ .Values.validationFailureAction }}
+  background: true
+  rules:
+    - name: require-fixed-image-tags
+      match:
+        any:
+          - resources:
+              kinds:
+                - Pod
+              namespaces:
+                - {{ .Values.targetNamespace }}
+      validate:
+        message: Images must use explicit, non-latest tags.
+        pattern:
+          spec:
+            containers:
+              - image: "!*:latest"
+
